@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<link rel="stylesheet" href="css/repeat.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="swiper/swiper.css">
+</head>
+
+<body>
+	<div class="top">
+	  <div class="topne gWidth">
+		<a href="">[收藏本站]</a>
+		<a href="">注册</a>
+		<a href="">登录|</a> 
+		<a href="">成都分站</a>
+		<a href="">网上车贷</a>
+		<a href="">全国行情</a>
+		<a href="">北京车展</a>
+		<a href="">汽车经贸大全</a>
+		
+		</div>
+	</div>
+	<div class="header gWidth">
+		<div class="logo"><img src="img/logo.jpg"></div>
+		<ul class="daohang">
+			<li><a><b>新车</b></a><a>国产</a><a>进口</a><a>谍照</a><span></span></li>
+			<li><a><strong>咨询</strong></a><a>行业</a><a>车企动态</a><a>原创</a><span></span></li>
+			<li><a><b>评测</b></a><a>专业评测</a><a>对比测试</a><a>深度解析</a><span></span></li>
+			<li><a><b>导航</b></a><a>行情</a><span></span></li>
+			<li><a><b>电子杂志</b></a><a>评测</a><span></span></li>
+		</ul>
+		<ul class="daohangxia">
+			<li>
+				<a href="">图库</a><span></span><a href="">问答</a><span></span><a href="">体验</a><span></span><a href="">汽车赛事</a><span></span><a href="">汽车改装</a><span></span><a href="">自驾游</a><span></span><a href="">汽车技术</a><span></span><a href="">汽车设计</a><span></span><a href="">用车养车</a><span></span><a href="">二手车</a><span></span><a href="">《调查》</a><span></span><a href="">《问答》</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="sousuo gWidth">
+	<ul>
+		<li class="s1"><a>快速找车</a><span></span><input type="text"  id="kuan1" name="search" placeholder="请输入关键字"> <div id="search">搜索</div></li>
+		<li class="s2"><a>品牌找车</a><span></span><select> <option value="pinpai">选择品牌</option> <option value="nv">奔驰</option> <option value="nv">宝马</option> </select> <select id = "sex2"><option value="pinpai2">选择车系</option><input type="button" id="search2" value="查找" onclick="go();"></select></li>
+		<li class="s3"><a>车型库</a><span class="sanjiao"></span><a>按品牌&nbsp|</a><a>按价格&nbsp|</a><a>按级别&nbsp|</a><a>按拼音</a></li>
+	
+	</ul>
+	</div>
+	
+	<div class="swiper-container gWidth">
+    <div class="swiper-wrapper gWidth">
+        <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+         <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/banner.jpg" alt=""></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination">
+    </div>
+    </div>
+        	<script src="swiper/swiper.min.js"></script>
+   <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+	effect : 'cube',
+   cubeEffect: {
+    slideShadows: true,
+    shadow: true,
+   // shadowOffset: 100,
+    //shadowScale: 0.6
+  },
+	
+    autoplay: {
+    delay: 2000,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+    },
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })        
+  </script>
+    
+    
+    
+    
+    
+    <div class="zhanshi gWidth">
+    	<div class="zsleft"></div>
+    	<div class="zslunbo">
+    		<div class="lunbo">
+		<ul class="imgs">
+			<li><img src="img/lub1.jpg" alt="3"></li>
+			<li><img src="img/lub1.jpg" alt="1"></li>
+			<li><img src="img/lub1.jpg" alt="2"></li>
+			<li><img src="img/lub1.jpg" alt="3"></li>
+			<li><img src="img/lub1.jpg" alt="1"></li>
+		</ul>
+		<a href="###" class="prev">&lt;</a>
+		<a href="###" class="next">&gt;</a>
+	</div>
+	
+	<script src="libs/jquery.min.js"></script>
+	<script>
+	var index=0;
+	var speed=662;
+	var w=$('.lunbo').width();
+	var n=$('.imgs').find('li').size();
+	$('.imgs').width(w*n).css('left','-'+w+'px');
+	function move(direction) {
+		direction=='+'?index--:index++;
+		$('.imgs').animate({
+			left: direction+'='+w+'px'},
+			speed, function() {
+			if($('.imgs').css('left')=='-'+w*(n-1)+'px'){
+				$('.imgs').css('left','-'+w+'px');
+				index=0;
+			}
+			if($('.imgs').css('left')=='0px'){
+				$('.imgs').css('left','-'+w*(n-2)+'px');
+				index=n-3;
+			}
+		});
+	}
+	$('.prev').click(function() {
+		move('+');
+	});
+	$('.next').click(function() {
+		move('-');
+	});
+	</script>
+
+    	</div>
+    	<div class="zsright"></div>
+    </div>
+    
+<div class="jctj gWidth" >
+    	<h6>精彩剧集</h6>
+	<div class="btn">
+    	<span></span>
+    	<span></span>
+    </div>
+    <div class="prev2"><a href="#" class="zuoyi"></a></div>
+		<div class="next2"><a class="youyi"></a></div>
+    <ul id="imgs">
+		   <li>
+		   <a href=""><img src="img/che1.jpg" alt=""><h3>CT200h将于10月26日上市</h3></a>
+		   <a href=""><img src="img/che2.gif" alt=""><h3>CT200h将于10月26日上市</h3></a>
+		   <a href=""><img src="img/che2.gif" alt=""><h3>CT200h将于10月26日上市</h3></a>
+		   <a href=""><img src="img/che4.jpg" alt=""><h3>CT200h将于10月26日上市</h3></a>
+		   </li>
+			
+		</ul>
+    </div>
+    
+    <div class="daxue gWidth">
+    	<div class="dxnr" >
+    		<h2>01<i></i></h2>
+    		<p>北京工业大学 > BISD 车队</p>
+    		<a class="chengji">目前成绩 : <span>960</span> 分</a>
+    			</div>
+    		<div class="dxnrbtoom">
+    			<div class="zuotu">
+    			<img src="img/zhanshi.jpg" alt=""><div class="lianjie"><a>官方网站</a><span>|</span><a>更多动态</a></div></div>
+    			
+    			<div class="danrzhong">
+    			<table cellspacing="0">
+                <tr>
+                    <td style="background-color: #F4F3F3">静态项目</td>
+                    <td>营销报告</td>
+                    <td><span>75</span></td>
+                    <td>赛车设计</td>
+                    <td><span>150</span></td>
+					<td>成本分析</td>
+                    <td><span>100</span></td>
+                
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr style="border-bottom: 0px solid;">
+                    <td style="background-color: #F4F3F3">总分</td>
+                     <td style="font-size: 18px;"><span>960</span></td>
+                  </tr>
+                  </table>
+    		</div>
+    		
+    		<div class="dxnryou">
+    			<ul>
+                  <li class="l3" style="margin-top: -7px;"><a>指导老师 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队队长 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队成员 :</a><span><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br> </span></li>
+                 </ul>                                    
+    		</div>
+    		</div>	
+    	
+    	<div class="dxnr" style="margin-top: 185px;">
+    		<h2>34<i></i></h2>
+    		<p>西安科技汽车职业技术学院 > BISD 车队</p>
+    		<a class="chengji">目前成绩 : <span>960</span> 分</a>
+    		
+    		<div class="dxnrbtoom">
+    			<div class="zuotu">
+    			<img src="img/zhanshi.jpg" alt=""><div class="lianjie"><a>官方网站</a><span>|</span><a>更多动态</a></div></div>
+    			
+    			<div class="danrzhong">
+    			<table cellspacing="0">
+                <tr>
+                    <td style="background-color: #F4F3F3">静态项目</td>
+                    <td>营销报告</td>
+                    <td><span>75</span></td>
+                    <td>赛车设计</td>
+                    <td><span>150</span></td>
+					<td>成本分析</td>
+                    <td><span>100</span></td>
+                
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr style="border-bottom: 0px solid;">
+                    <td style="background-color: #F4F3F3">总分</td>
+                     <td style="font-size: 18px;"><span>960</span></td>
+                  </tr>
+                  </table>
+    		</div>
+    		
+    		<div class="dxnryou">
+    			<ul>
+                  <li class="l3" style="margin-top: -7px;"><a>指导老师 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队队长 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队成员 :</a><span><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br> </span></li>
+                 </ul>                                    
+    		</div>
+    		</div>	
+    	</div>
+    	
+    	<div class="dxnr" style="margin-top: 185px;">
+    		<h2>34<i></i></h2>
+    		<p>The Notice of 2012 FSCRecommended Logistics</p>
+    		<a class="chengji">目前成绩 : <span>960</span> 分</a>
+    		
+    		<div class="dxnrbtoom">
+    			<div class="zuotu">
+    			<img src="img/zhanshi.jpg" alt=""><div class="lianjie"><a>官方网站</a><span>|</span><a>更多动态</a></div></div>
+    			
+    			<div class="danrzhong">
+    			<table cellspacing="0">
+                <tr>
+                    <td style="background-color: #F4F3F3">静态项目</td>
+                    <td>营销报告</td>
+                    <td><span>75</span></td>
+                    <td>赛车设计</td>
+                    <td><span>150</span></td>
+					<td>成本分析</td>
+                    <td><span>100</span></td>
+                
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #F4F3F3">动态项目</td>
+                    <td>直线加速测试</td>
+                    <td><span>75</span></td>
+                    <td>8字环绕测试</td>
+                    <td><span>50</span></td>
+					<td>&nbsp</td>
+                  </tr>
+                  <tr style="border-bottom: 0px solid;">
+                    <td style="background-color: #F4F3F3">总分</td>
+                     <td style="font-size: 18px;"><span>960</span></td>
+                  </tr>
+                  </table>
+    		</div>
+    		
+    		<div class="dxnryou">
+    			<ul>
+                  <li class="l3" style="margin-top: -7px;"><a>指导老师 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队队长 :</a><span>李顺虎</span></li>
+                  <li class="l3"><a>车队成员 :</a><span><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><i>李顺虎</i><br> </span></li>
+                 </ul>                                    
+    		</div>
+    		</div>	
+    	</div>
+    	</div>
+    	
+    	<div class="tuji gWidth">
+    		<div class="tujitop">
+    			<h2>FSC赛事图集</h2>
+    			<a href="">更多>></a>
+    		</div>
+    		<ul class="saichetu">
+    			<li><img src="img/tj1.jpg" alt=""></li>
+    			<li><img src="img/tj2.jpg" alt=""></li>
+    			<li><img src="img/tj3.jpg" alt=""></li>
+    			<li><img src="img/tj4.jpg" alt=""></li>
+    			<li><img src="img/tj5.jpg" alt=""></li>
+    			<li><img src="img/tj1.jpg" alt=""></li>
+    			<li><img src="img/tj2.jpg" alt=""></li>
+    			<li><img src="img/tj3.jpg" alt=""></li>
+    			<li><img src="img/tj4.jpg" alt=""></li>
+    			<li><img src="img/tj5.jpg" alt=""></li>
+    		</ul>
+    		<ul class="chemo">
+    			<li><img src="img/chemo1.jpg" alt=""><a>天使魔鬼极度诱惑</a></li>
+    			<li><img src="img/chemo2.jpg" alt=""><a>美女模特出席红车表演</a></li>
+    			<li><img src="img/chemo3.jpg" alt=""><a>夜色女郎相遇豪华跑车</a></li>
+    			<li><img src="img/chemo4.jpg" alt=""><a>清纯小妹共舞奥迪</a></li>
+    			<li><img src="img/chemo5.jpg" alt=""><a>美女车模性感蜕变</a></li>
+    		</ul>
+    	</div>
+    	
+    	<div class="wenzhang gWidth">
+    		<h2>编辑推荐文章</h2>
+    		<ul>
+    			<li class="wenzuo">
+    			<img src="img/wen1.jpg" alt="">
+    			<h4>完全满足日常需求！试驾新福克斯</h4>
+    			<p class="p2">新福克斯从2012年4月上市至今3个月以来,始终占据汽车之友紧凑型车以及全国国产车关注度第一的位置，这车现在有多热！在今年3月，我们也对新福克斯车型进行了详细测试。并对他的表现给与了很高的评价...<span>[详细]</span></p></li>
+    			<li class="wenzuo" style="margin-left:15px;">
+    			<img src="img/wen1.jpg" alt="">
+    			<h4>完全满足日常需求！试驾新福克斯</h4>
+    			<p class="p2">新福克斯从2012年4月上市至今3个月以来,始终占据汽车之友紧凑型车以及全国国产车关注度第一的位置，这车现在有多热！在今年3月，我们也对新福克斯车型进行了详细测试。并对他的表现给与了很高的评价...<span>[详细]</span></p></li>
+    			
+    		</ul>				
+    	</div>
+    	
+    	<div class="bottom gWidth">
+    		<a href="">关于我们</a>|<a href="">AutoFan</a>|<a href="">主编社区</a>|<a href="">联系我们</a>|<a href="">网站地图</a>|<a href="">招贤纳士</a>|<a href="">友情链接</a>|<a href="">百度新闻源</a>
+    	</div>
+    	
+    	<div class="banquan gWidth">Coyright {c} 2004 -2012 AutoFan. com. cn, All Rights Reserved 版权所有 汽车之友 京ICP证040935号-1
+    	<img src="img/banquan.jpg" alt=""><img  src="img/banquan2.jpg" alt="">
+    	 </div>
+    	
+    	
+    	
+    	
+    	
+ 
+    
+
+
+</body>
+</html>
